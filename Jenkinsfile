@@ -2,8 +2,20 @@ pipeline {
   agent any
   stages {
     stage('Install') {
-      steps {
-        build 'npm install'
+      parallel {
+        stage('Install') {
+          steps {
+            build 'npm install'
+          }
+        }
+
+        stage('Ckeck node') {
+          steps {
+            sh '''node js --version
+npm --version'''
+          }
+        }
+
       }
     }
 
@@ -13,7 +25,7 @@ pipeline {
       }
     }
 
-    stage('') {
+    stage('error') {
       steps {
         echo 'Everything is okay'
       }
