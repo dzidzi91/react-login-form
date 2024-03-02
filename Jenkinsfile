@@ -1,12 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Git checkout') {
-      steps {
-        git(url: 'git \'https://github.com/dzidzi91/react-login-form.git\'', branch: 'master', poll: true)
-      }
-    }
-
     stage('Build') {
       steps {
         sh 'docker build -t jenkins-image .'
