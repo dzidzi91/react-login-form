@@ -112,6 +112,17 @@ function App() {
                                 onChange={handleChange}
                             />
                         </div>
+                        <p>{formErrors.love}</p>
+                        <div className="field">
+                            <label>Confirm that you love Dzidzi</label>
+                            <input
+                                type="love"
+                                name="loveDzidzi"
+                                placeholder="Confirm that you love dzidzi"
+                                value={formValues.confirmLove}
+                                onChange={handleChange}
+                            />
+                        </div>
                         <p>{formErrors.confirmPassword}</p>
                         <button className="fluid ui button blue">Submit</button>
                     </div>
